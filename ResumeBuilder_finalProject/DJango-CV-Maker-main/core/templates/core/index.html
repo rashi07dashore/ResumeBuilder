@@ -1,0 +1,34 @@
+{% include 'core/header.html' %}
+{% load static %}
+
+<div id="content-wrapper" class="mt-4" style="padding-top: 1%;">
+     <div class="container-fluid">
+       <div class="card mb-2 col-md-12">
+           <div class="card-body">
+               <div class="row">
+                   <div class="col-md-4">
+                       <img src="{% static 'img/1.png' %}" style="padding-left: 10%;" width="500" height="600">
+                   </div>
+                   <div class="col-md-7">
+
+                       <h1 class="text-primary">Build Your Amazing Resume</h1>
+
+                       <p class="welcome_text">A Simple & Quick Way To Create A New Cv</p>
+                       <p class="welcome_text">Fill In The Blank Form, Generate And Download PDF Cv</p>
+
+                       <a href=""><button class="startBtn">Get Started</button></a>
+                       <br/>
+                       <br/>
+                       <br/>
+
+                    {% include 'core/footer.html' %}
+                   </div>
+               </div>
+           </div>
+       </div>
+     </div>
+</div>
+
+
+
+

@@ -1,0 +1,63 @@
+
+
+{% include 'core/navbar.html' %}
+{% load static %}
+
+
+<div id="content-wrapper" class="mt-4" style="padding-top: 1%;">
+     <div class="container-fluid">
+       <div class="card mb-2 col-md-12">
+           <div class="card-body">
+               <div class="row">
+                   <div class="col-md-4">
+                       <img src="{% static 'img/1.png' %}" style="padding-left: 10%;"width="500" height="600">
+                   </div>
+                   <div class="col-md-7">
+
+                       <h1 class="text-primary">Build Your Amazing Cv</h1>
+
+                       <p class="welcome_text">A Simple & Quick Way To Create A New Cv</p>
+                       <p class="welcome_text">Fill In The Blank Form, Generate And Download PDF Cv</p>
+                      
+                       {% if status == 'there_is_cv' %}
+                       <a href="{% url 'createcv' %}">
+                        <button class="btn btn-primary" >Create Cv</button>
+                       </a>
+                       
+
+                    <a href="{% url 'cv-detail'  id=request.user.cv.id %}">
+                        <button class="btn btn-info">View Cv</button>
+                    </a>
+  
+                      <a href="{% url 'cv-edit' %}">
+                        <button class="btn btn-success">Edit Cv</button>
+                    </a>
+  
+  
+                    <a href="{% url 'cv-download' id=request.user.cv.id %}">
+                      <button class="btn btn-warning">Get Your Cv</button>
+                  </a>
+
+                       {% else %}
+                       <a href="{% url 'createcv' %}">
+                        <button class="btn btn-primary" id="h">Create Cv</button>
+                       </a>
+
+                       {% endif %}
+
+
+                       <br/>
+                       <br/>
+                       <br/>
+
+                    {% include 'core/footer.html' %}
+                   </div>
+               </div>
+           </div>
+       </div>
+     </div>
+</div>
+
+
+
+

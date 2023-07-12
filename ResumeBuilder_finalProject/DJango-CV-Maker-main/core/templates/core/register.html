@@ -1,0 +1,61 @@
+{% include 'core/header.html' %}
+{% load static %}
+
+<div id="content-wrapper" class="mt-4" style="padding-top: 1%;">
+     <div class="container-fluid">
+       <div class="col-md-12">
+           
+       
+        <div class="row">
+        <div class="col-md-4">
+           </div>
+
+        <div class="card col-md-3">
+            <h1></h1>
+            <form method="POST" action="">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>Username</label>
+                    <input class="form-control" type="text" name="username" placeholder="Enter Username" required/>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="email" placeholder="Enter Email" required/>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" type="password" name="password" placeholder="Enter Password" required/>
+                </div>
+
+                <div class="form-group">
+                    <button class="loginbtn">Sign Up</button>
+                </div>
+
+                <a href="{% url 'login' %}">Have account ? Sign In here</a>
+                {% if messages %}
+                {% for message in messages %}
+                    
+                <p class="text-success text-center" style="font-weight: bold;">{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+
+            </form>
+           </div>
+
+           <div class="col-md-4">
+           </div>
+
+        </div>
+       
+       </div>
+
+       {% include 'core/footer.html' %}
+     </div>
+</div>
+
+
+
+
